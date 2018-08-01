@@ -82,22 +82,6 @@ TBD.
 
 TBD.
 
-## The YANG Module Names Registry
-
-This document registers two YANG modules in the YANG Module Names
-registry [RFC6020].  Following the format defined in [RFC6020], the
-the following registration is requested:
-
-      name:         ietf-cwt-voucher
-      namespace:    urn:ietf:params:xml:ns:yang:ietf-cwt-voucher
-      prefix:       vch
-      reference:    RFC XXXX
-
-      name:         ietf-cwt-voucher-request
-      namespace:    urn:ietf:params:xml:ns:yang:ietf-cwt-voucher-request
-      prefix:       vch
-      reference:    RFC XXXX
-
 # Acknowledgements
 
 This work was supported by the Canadian Internet Registration Authority (cira.ca).
