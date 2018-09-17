@@ -34,7 +34,8 @@ module cira-shg-mud {
 
   augment "/m:mud" {
     description
-      "Adds leaf nodes appropriate MUD usage in the Secure Home Gateway";
+      "Adds leaf nodes appropriate MUD usage in the
+       Secure Home Gateway";
 
     container quaranteed-device-policy {
       description
@@ -43,9 +44,9 @@ module cira-shg-mud {
          These policies are usually a subset of operational policies
          and are intended to permit firmware updates only.
          They are intended to keep the device safe (and the network safe
-         from the device) when the device is suspected of being out-of-date,
-         but still considered sufficiently intact to be able to do
-         a firmware update";
+         from the device) when the device is suspected of being
+         out-of-date, but still considered sufficiently intact to be
+         able to do a firmware update";
       uses m:access-lists;
     }
   }
