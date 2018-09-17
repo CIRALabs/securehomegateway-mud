@@ -1,29 +1,22 @@
 DRAFT:=opsawg-cira-securehomegateway-mud
 VERSION:=$(shell ./getver ${DRAFT}.mkd )
 YANGDATE=2017-12-11
-#CWTDATE1=yang/ietf-constrained-voucher@${YANGDATE}.yang
-#CWTSIDDATE1=ietf-constrained-voucher@${YANGDATE}.sid
-#CWTSIDLIST1=ietf-constrained-voucher-sid.txt
-#PYANG=./pyang.sh
-
-# git clone this from https://github.com/mbj4668/pyang.git
-# then, cd pyang/plugins;
-#       wget https://raw.githubusercontent.com/core-wg/yang-cbor/master/sid.py
-# sorry.
-#PYANGDIR=/sandel/src/pyang
+YANGFILE=cira-shg-mud
+CWTDATE1=yang/${YANGFILE}@${YANGDATE}.yang
+PYANG=pyang
 
 ${DRAFT}-${VERSION}.txt: ${DRAFT}.txt
 	cp ${DRAFT}.txt ${DRAFT}-${VERSION}.txt
 	: git add ${DRAFT}-${VERSION}.txt ${DRAFT}.txt
 
-${CWTDATE1}: ${DRAFT}.yang
+${CWTDATE1}:: ${YANGFILE}.yang
 	mkdir -p yang
-	sed -e"s/YYYY-MM-DD/${YANGDATE}/" ${DRAFT}.yang > ${CWTDATE1}
+	sed -e"s/YYYY-MM-DD/${YANGDATE}/" ${YANGFILE}.yang > ${CWTDATE1}
 
-${DRAFT}-tree.txt: ${CWTDATE1}
-	${PYANG} --path=../../anima/voucher/yang:../../anima/bootstrap/yang -f tree --tree-print-groupings --tree-line-length=70 ${CWTDATE1} > ${DRAFT}-tree.txt
+${YANG}-tree.txt: ${CWTDATE1}
+	${PYANG} -f tree --path=yang --tree-print-groupings --tree-line-length=70 ${CWTDATE1} > ${YANGFILE}-tree.txt
 
-%.xml: %.mkd ${CWTDATE1} #${CWTSIDLIST1} 
+%.xml: %.mkd ${CWTDATE1} ${YANG}-tree.txt
 	kramdown-rfc2629 ${DRAFT}.mkd | ./insert-figures >${DRAFT}.xml
 	: git add ${DRAFT}.xml
 
@@ -36,17 +29,24 @@ ${DRAFT}-tree.txt: ${CWTDATE1}
 submit: ${DRAFT}.xml
 	curl -S -F "user=mcr+ietf@sandelman.ca" -F "xml=@${DRAFT}.xml" https://datatracker.ietf.org/api/submit
 
-${CWTSIDLIST1} ${CWTSIDDATE1}: ${CWTDATE1}
-	mkdir -p yang
-	${PYANG} --path=../../anima/voucher/yang:../../anima/bootstrap/yang --list-sid --update-sid-file ${CWTSIDDATE1} ${CWTDATE1} | ./truncate-sid-table >${DRAFT}-sid.txt
-
-boot-sid1:
-	${PYANG} --path=../../anima/voucher/yang:../../anima/bootstrap/yang --list-sid --generate-sid-yfile 1001100:50 ${CWTDATE1}
-
 version:
 	echo Version: ${VERSION}
 
 clean:
-	-rm -f ${DRAFT}.xml ${CWTDATE1} ${CWTDATE2}
+	-rm -f ${DRAFT}.xml ${CWTDATE1}
+
+yang/ietf-mud@2018-06-15.yang:
+	mkdir -p yang
+	(cd yang && wget https://raw.githubusercontent.com/YangModels/yang/master/experimental/ietf-extracted-YANG-modules/ietf-mud@2018-06-15.yang )
+
+yang/ietf-acldns@2018-06-15.yang:
+	mkdir -p yang
+	(cd yang && wget https://raw.githubusercontent.com/YangModels/yang/master/experimental/ietf-extracted-YANG-modules/ietf-acldns@2018-06-15.yang )
+
+yang/ietf-access-control-list@2018-04-27.yang:
+	mkdir -p yang
+	(cd yang && wget https://raw.githubusercontent.com/YangModels/yang/master/experimental/ietf-extracted-YANG-modules/ietf-access-control-list@2018-04-27.yang )
+
+${CWTDATE1}:: yang/ietf-mud@2018-06-15.yang yang/ietf-acldns@2018-06-15.yang yang/ietf-access-control-list@2018-04-27.yang
 
 .PRECIOUS: ${DRAFT}.xml

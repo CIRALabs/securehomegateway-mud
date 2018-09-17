@@ -56,11 +56,27 @@ the border gateway to enhance or modify the stated security policy.
 
 # Introduction
 
-TBD
+The initial extension from this document is to provide for a way to mark a
+set of ACLs as being enabled even though the device has quaranteed.
+{EDNOTE: more motivational text here}
+
+The second issue addressed by the document is the question of whether and
+when the MUD file should be specific to a specific version of the device
+firmware.
+
+The third issue is that an intermediary (ISP, or third-party security
+service) may want to extend or amend a MUD file received from a manufacturer.
+In order to maintain an audit trail of changes, a way to encode the previous
+MUD URL and signature file (and status) is provided.
 
 # Terminology          {#Terminology}
 
-TBD
+The major new term, compared to the MUD document is the term
+
+quaranteed:
+: a device which has shown behaviour forbidden by a MUD file ACL, and has
+subsequently been denied further access to the network.
+
 
 # Requirements Language {#rfc2119}
 
@@ -70,9 +86,20 @@ and "OPTIONAL" are to be interpreted as described in BCP 14, RFC 2119
 {{RFC2119}} and indicate requirement levels for compliant STuPiD
 implementations.
 
-# Artifacts
+# MUD file extensions
 
-TBD
+## Tree Diagram
+
+<figure>
+INSERT_TEXT_FROM_FILE cira-shg-mud-tree.txt END
+</figure>
+
+
+## YANG FILE
+
+<figure>
+INSERT_TEXT_FROM_FILE cira-shg-mud@DATE.yang END
+</figure>
 
 # Security Considerations
 
