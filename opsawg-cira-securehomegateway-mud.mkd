@@ -56,9 +56,10 @@ the border gateway to enhance or modify the stated security policy.
 
 # Introduction
 
-The initial extension from this document is to provide for a way to mark a
-set of ACLs as being enabled even though the device has quaranteed.
-{EDNOTE: more motivational text here}
+This document details how the CIRALabs Secure Home Gateway uses MUD files.
+
+Another document {{I-D.richardson-shg-mud-quarantined-access}} details
+an extension to mark certain ACLs as providing firmware update access.
 
 The second issue addressed by the document is the question of whether and
 when the MUD file should be specific to a specific version of the device
@@ -85,21 +86,6 @@ In this document, the key words "MUST", "MUST NOT", "REQUIRED",
 and "OPTIONAL" are to be interpreted as described in BCP 14, RFC 2119
 {{RFC2119}} and indicate requirement levels for compliant STuPiD
 implementations.
-
-# MUD file extensions
-
-## Tree Diagram
-
-<figure>
-INSERT_TEXT_FROM_FILE cira-shg-mud-tree.txt END
-</figure>
-
-
-## YANG FILE
-
-<figure>
-INSERT_TEXT_FROM_FILE cira-shg-mud@DATE.yang END
-</figure>
 
 # Security Considerations
 
