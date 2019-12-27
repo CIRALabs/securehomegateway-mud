@@ -66,7 +66,8 @@ informative:
     format:
       pdf: https://github.com/kcdtv/wpa3/blob/master/Device_Provisioning_Protocol_Specification_v1.0.pdf
     target: "https://www.wi-fi.org/downloads-registered-guest/Device_Provisioning_Protocol_Draft_Technical_Specification_Package_v0_0_23_0.zip/31255"
-  qrcodewebservice:
+    date: "April 2018"
+  qrencode:
     target: "https://fukuchi.org/works/qrencode/index.html.en"
     title: "QR encode"
     author:
@@ -120,7 +121,7 @@ firmware.
 The third issue is that an intermediary (ISP, or third-party security
 service) may want to extend or amend a MUD file received from a manufacturer.
 In order to maintain an audit trail of changes, a way to encode the previous
-MUD URL and signature file (and status) is provided.
+MUD URL and signature file (and status) is provided. (FOR DISCUSSION)
 
 # Terminology          {#Terminology}
 
@@ -133,7 +134,8 @@ The {{dpp}} specification from the Wi-Fi Alliance has created a base for a QRcod
 The QR code is as specified in section 5.2.1 of {{dpp}} is repeated here:
 
 ~~~~
-    dpp-qr = “DPP:” [channel-list “;”] [mac “;”] [information “;”] public-key “;;”
+    dpp-qr = “DPP:” [channel-list “;”] [mac “;”]
+                    [information “;”] public-key “;;”
 ~~~~
 
 This is amended as follows:
