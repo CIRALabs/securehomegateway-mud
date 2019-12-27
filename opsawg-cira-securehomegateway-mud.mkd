@@ -114,7 +114,7 @@ as {{qrencode}}.  They are formally defined in {{isoiec18004}}.
 
 This document details how the CIRALabs Secure Home Gateway encode MUD URLs as QR codes.
 
-A issue addressed by this document is the question of whether and
+Section {#genericfirmware} addresses the question of whether and
 when the MUD file should be specific to a specific version of the device
 firmware.
 
@@ -164,10 +164,33 @@ The URL provided MUST NOT have a query (?) portion present.
 
 An IANA registry is created for the attributes below.
 
+# Generic URL or Version Specific URL {#genericfirmware}
+
+MUD URLs which are communicated inband by the device, and which are programmed into the device's firmware may provide a firmware specific version of the MUD URL.
+This has the advantage that the resulting ACLs implemented are specific to the needs of that version of the firmware.
+
+If the device evolves, requiring new entries then a failure to use the correct version may result in the device cause false positives in the enforcement point audit trail.
+This can be a serious problem, as repeated false positives train users/owners to ignore reports.
+
+If an older firmware device is described by a newer MUD file, then the possibility is that the device may have permissions that it can never use.
+Unless those permissions result in the device being open to an attacker, this is not a problem.
+If the new MUD file has removed or changed permissions (such as because the name of an external resource has changed), then the older device will not be able to access the resource under the old name.
+
+The QR code is updated when the device firmware is updated.
+The URL given in the QR code SHOULD be a reference to the latest version of the MUD file, with no firmware version information.
+A symbolic name like "/model/latest.json" which is updated by the manufacturer when revisions to the MUD file are made is most appropriate.
+The manufacturer should be careful to never remove important access rights that older device may need, as the QRcode provided MUD URL is what a freshly unpacked device will use.
+Such a device will point to the latest MUD URL, but having been a in box for some time, will have an ancient version of the firmware.
 
 # Privacy Considerations
 
-TBD.
+The presence of the MUD URL in the QR code reveals the manufacturer of the device, the type or model of the device, and possibly the firmware version of the device.
+
+If the QR code is printed on a sticker and is affixed to the device itself, then the QR code does not reveal anything that a human could not have determined by simply examining the device. (Save perhaps the firmware version).
+The QR code however, may be visible my machine vision systems in the same area.
+This includes security systems, robotic vacuum cleaners, anyone taking a picture with a camera.
+Such systems may store the picture(s) in such a way that a future viewer of the image will be able to decode the QR code, possibly through assembly of multiple pictures.
+The QR code is not, however, a certain indicator that the device is present, only that the QR code sticker that came with the device is present.
 
 # Security Considerations
 
