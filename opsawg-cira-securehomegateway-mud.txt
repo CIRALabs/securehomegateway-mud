@@ -6,8 +6,6 @@
 Internet-Draft                                  Sandelman Software Works
 Intended status: Informational                                 J. Latour
 Expires: 29 June 2020                                          CIRA Labs
-              					   H. Habibi Gharakheili
-                                                             UNSW Sydney
                                                         27 December 2019
 
 
