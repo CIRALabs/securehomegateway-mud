@@ -1,13 +1,13 @@
 ---
 title: Loading MUD URLs from QR codes
 abbrev: SHG-MUD
-docname: draft-richardson-opsawg-securehomegateway-mud-02
+docname: draft-richardson-opsawg-securehomegateway-mud-03
 
 stand_alone: true
 
 ipr: trust200902
 area: Internet
-wg: 6tisch Working Group
+wg: OPS Area Working Group
 kw: Internet-Draft
 cat: info
 
@@ -80,7 +80,7 @@ informative:
       ins: "K. Fukuchi"
     date: "December 2019"
   isoiec18004:
-    title: "Information technology — Automatic identification and data capture techniques — QR Code bar code symbology specification (ISO/IEC 18004)"
+    title: "Information technology - Automatic identification and data capture techniques - QR Code bar code symbology specification (ISO/IEC 18004)"
     author:
       ins: "ISO/IEC"
     date: "2015-02-01"
