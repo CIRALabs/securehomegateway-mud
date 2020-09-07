@@ -79,6 +79,18 @@ informative:
     author:
       ins: "K. Fukuchi"
     date: "December 2019"
+  MUDgee:
+    target: "https://github.com/ayyoob/mudgee"
+    title: "MUDgee"
+    author:
+      ins: "A. Hamza"
+    date: "July 2019"
+  MUDfiles:
+    target: "https://iotanalytics.unsw.edu.au/mud/"
+    title: "MUD Profiles"
+    author:
+      ins: "UNSW Sydney"
+    date: "July 2019"
   isoiec18004:
     title: "Information technology — Automatic identification and data capture techniques — QR Code bar code symbology specification (ISO/IEC 18004)"
     author:
@@ -187,6 +199,12 @@ The URL given in the QR code SHOULD be a reference to the latest version of the 
 A symbolic name like "/model/latest.json" which is updated by the manufacturer when revisions to the MUD file are made is most appropriate.
 The manufacturer should be careful to never remove important access rights that older device may need, as the QRcode provided MUD URL is what a freshly unpacked device will use.
 Such a device will point to the latest MUD URL, but having been a in box for some time, will have an ancient version of the firmware.
+
+# Crowd Supply of MUD Files
+
+The IETF MUD is a new standard. Hence, IoT device manufacturers have not yet provided MUD profiles for their devices. A research group at the University of New South Wales (UNSW Sydney) has developed an open-source tool, called MUDgee ({{MUDgee}}), which automatically generates a MUD file (profile) for an IoT device from its traffic trace in order to make this process faster, easier, and more accurate. Note that the generated profile completeness solely depends on the completeness of the input traffic traces. MUDgee assumes that all the activity seen is intended and benign.
+
+UNSW researchers have applied MUDgee about 30 consumer IoT devices from their lab testbed, and publicly released their MUD files ({{MUDfiles}}). MUDgee can assist IoT manufacturers in developing and verifying MUD profiles, while also helping adopters of these devices to ensure they are compatible with their organisational policies. 
 
 # Privacy Considerations
 
