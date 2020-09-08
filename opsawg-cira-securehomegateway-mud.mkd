@@ -1,7 +1,7 @@
 ---
 title: On loading MUD URLs from QR codes
 abbrev: SHG-MUD
-docname: draft-richardson-opsawg-securehomegateway-mud-04
+docname: draft-richardson-opsawg-securehomegateway-mud-05
 
 stand_alone: true
 
@@ -92,8 +92,7 @@ This informational document details the mechanism used by the CIRA Secure
 Home Gateway (SHG) to load MUD definitions for devices which have no
 integrated MUD (RFC8520) support.
 
-The document describes extensions to the WiFi Alliance DPP QR code to support
-the use of MUD URLs.
+RFCEDITOR please remove: Pull requests and edit welcome at:   https://github.com/CIRALabs/securehomegateway-mud/tree/ietf
 
 --- middle
 
@@ -102,13 +101,13 @@ the use of MUD URLs.
 The Manufacturer Usage Description (MUD) {{RFC8520}} defines a YANG data model to express what sort of access a device requires to operate correctly.
 The document additionally defines three ways for the device to communicate the URL of the resulting JSON {{RFC8259}} format file to a network enforcement point: DHCP, within an X.509 certificate extension, and via LLDP.
 
-Each of the above mechanism conveys the MUD URL inband, and requires modifications to the device firmware.
+Each of the above mechanism conveys the MUD URL in-band, and requires modifications to the device firmware.
 Most small IoT devices do not have LLDP, and often have very restricted DHCP clients.
 Adding the LLDP or DHCP options requires at least some minimal configuration change, and possibly entire new subsystems.
-Meanwhile, use of the PKIX certificateion extension only makes sense as part of a larger IDevID based {{ieee802-1AR}} deployment such as {{-BRSKI}}.
+Meanwhile, use of the PKIX certification extension only makes sense as part of a larger IDevID based {{ieee802-1AR}} deployment such as {{-BRSKI}}.
 
 In the above cases these mechanisms can only be implemented by persons with access to modify and update the firmware of the device.
-The MUD system was designed to be implemented by Manufacturers afterall!
+The MUD system was designed to be implemented by Manufacturers after all!
 
 In the meantime there is a chicken or egg problem ({{chickenegg}}): no manufacturers include MUD URLs in their products as there are no gateways that use them.
 No gateways include code that processes MUD URLs as no products produce them.
@@ -153,9 +152,9 @@ Then the list of needed Data Records to be filled in is explained.
 {{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{SQRL}}):
 * &lt;RS> Record Separator (ASCII 30)
 * &lt;EoT> End of Transmission (ASCII 4)
-* &lt;FS> Field Seperator (ASCII 28)
-* &lt;GS> Group Seperator (ASCII 29)
-* &lt;US> Unit Seperator (ASCII 31),
+* &lt;FS> Field Separator (ASCII 28)
+* &lt;GS> Group Separator (ASCII 29)
+* &lt;US> Unit Separator (ASCII 31),
 * Concatenation Operator (ASCII 43: "+").
 
 Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
@@ -185,7 +184,7 @@ Environment records, as described in section 7.4, look and act exactly as fields
 ### B000 Company Name
 
 The B000 Data Record is mandatory in {{SQRL}}.
-It should be an ASCII reprensentation of the company or brand name.
+It should be an ASCII representation of the company or brand name.
 It should match the ietf-mud/mud/mfg-name in the MUD file.
 
 ### B001 Product Name
@@ -211,21 +210,21 @@ The URL provided MUST NOT have a query (?) portion present.
 ### MUD device MAC address
 
 In order for the MUD controller to associate the above policy with a specific device, then some unique identifier must be provided to the MUD controller.
-The most actionable identifier is the ethernet MAC address.
+The most actionable identifier is the Ethernet MAC address.
 {{SQRL}} section 9.10 defines the Data Record: "M06C" as the MAC address.
 No format for the MAC address is provided in the document.
 
-The recommended format in order to conserve space is 12 or 16 hex octects.
-(16 octets for the newer IEEE OUI-64 format used in 802.15.4, and some next generation ethernet proposals)
+The recommended format in order to conserve space is 12 or 16 hex octets.
+(16 octets for the newer IEEE OUI-64 format used in 802.15.4, and some next generation Ethernet proposals)
 
-The parser SHOULD be tolerant of extra characters: colons (":"), dashes ("-"), and whitespace.
+The parser SHOULD be tolerant of extra characters: colons (":"), dashes ("-"), and white space.
 
 # Generic URL or Version Specific URL {#genericfirmware}
 
-MUD URLs which are communicated inband by the device, and which are programmed into the device's firmware may provide a firmware specific version of the MUD URL.
+MUD URLs which are communicated in-band by the device, and which are programmed into the device's firmware may provide a firmware specific version of the MUD URL.
 This has the advantage that the resulting ACLs implemented are specific to the needs of that version of the firmware.
 
-A MUD URL which is afixed to the device with a sticker, or etched into the case can not be changed.
+A MUD URL which is affixed to the device with a sticker, or etched into the case can not be changed.
 
 Given the considerations of {{I-D.richardson-opsawg-mud-acceptable-urls}} section 2.1 ("Updating the MUD file in place"), it is prudent to use a MUD URL which points to a MUD file which will only have new features added over time, and never removed.
 
