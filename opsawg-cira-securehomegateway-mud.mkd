@@ -38,7 +38,7 @@ author:
 normative:
   RFC2119:
   RFC8520:
-  sqrl:
+  SQRL:
     target: "https://rla.org/resource/12n-documentation"
     title: "SQRL Codes: Standardized Quick Response for Logistics, Using the 12N Data Identifier"
     author:
@@ -74,12 +74,6 @@ informative:
     author:
       org: "Internet"
     date: "December 2019"
-  dpp:
-    title: "Device Provisioning Protocol Specification"
-    format:
-      pdf: https://github.com/kcdtv/wpa3/blob/master/Device_Provisioning_Protocol_Specification_v1.0.pdf
-    target: "https://www.wi-fi.org/downloads-registered-guest/Device_Provisioning_Protocol_Draft_Technical_Specification_Package_v0_0_23_0.zip/31255"
-    date: "April 2018"
   qrencode:
     target: "https://fukuchi.org/works/qrencode/index.html.en"
     title: "QR encode"
@@ -130,7 +124,7 @@ Such an action can be done by
 * a retailer as a value added service.
 
 The mechanism described herein uses a QRcode, which is informally described in {{qrcode}}, but specifically leverages
-the data format from Reverse Logistics Association's {{sqrl}} system.
+the data format from Reverse Logistics Association's {{SQRL}} system.
 This is an application of the 12N Data Identifier system specified by the ANSI MH10.8.2 Committee in a format appropriate for QRcodes as well as other things like NFCs transmissions.
 
 QR code generators are available as web services ({{qrcodewebservice}}), or as programs such
@@ -150,34 +144,34 @@ MUD URL and signature file (and status) is provided. (FOR DISCUSSION)
 
 # Protocol
 
-This QRcode protocol builds upon the work by {{sqrl}}.
+This QRcode protocol builds upon the work by {{SQRL}}.
 That protocol is very briefly described in the next section.
 Then the list of needed Data Records to be filled in is explained.
 
 ## The SQRL protocol
 
-{{sqrl}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{sqrl}}):
-* <RS> Record Separator (ASCII 30)
-* <EoT> End of Transmission (ASCII 4)
-* <FS> Field Seperator (ASCII 28)
-* <GS> Group Seperator (ASCII 29)
-* <US> Unit Seperator (ASCII 31),
+{{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{SQRL}}):
+* &lt;RS> Record Separator (ASCII 30)
+* &lt;EoT> End of Transmission (ASCII 4)
+* &lt;FS> Field Seperator (ASCII 28)
+* &lt;GS> Group Seperator (ASCII 29)
+* &lt;US> Unit Seperator (ASCII 31),
 * Concatenation Operator (ASCII 43: "+").
 
-Section 7.2 of {{sqrl}} gives the details, which can be summarized as:
+Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
 
 1. The QR code header starts with:
 
 ~~~~
-"[)>" <RS> "06" <GS> "12N"
+"[)>" &lt;RS> "06" &lt;GS> "12N"
 ~~~~
 
-2. Include one or more Data Records. This consists of a four letter Field Identifiers followed by ASCII characters terminated with a <Unit Separator>.
+2. Include one or more Data Records. This consists of a four letter Field Identifiers followed by ASCII characters terminated with a &lt;Unit Separator>.
 
 3. End with:
 
 ~~~~
-<RS><EoT>
+&lt;RS>&lt;EoT>
 ~~~~
 
 There are, additionally optional flags that may be present in every Data Record as described in section 7.4.
