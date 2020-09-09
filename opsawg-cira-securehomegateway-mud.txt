@@ -82,7 +82,7 @@ Table of Contents
    9.  History . . . . . . . . . . . . . . . . . . . . . . . . . . .   7
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      10.1.  Normative References . . . . . . . . . . . . . . . . . .   7
-     10.2.  Informative References . . . . . . . . . . . . . . . . .   7
+     10.2.  Informative References . . . . . . . . . . . . . . . . .   8
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
@@ -188,10 +188,19 @@ Internet-Draft                   SHG-MUD                  September 2020
 
    [SQRL] documents an octet protocol that can be efficiently encoded
    into QRcodes using a sequence of ASCII bytes, plus five control codes
-   (see section 3.1 of [SQRL]): * <RS> Record Separator (ASCII 30) *
-   <EoT> End of Transmission (ASCII 4) * <FS> Field Separator (ASCII 28)
-   * <GS> Group Separator (ASCII 29) * <US> Unit Separator (ASCII 31), *
-   Concatenation Operator (ASCII 43: "+").
+   (see section 3.1 of [SQRL]):
+
+   *  <RS> Record Separator (ASCII 30)
+
+   *  <EoT> End of Transmission (ASCII 4)
+
+   *  <FS> Field Separator (ASCII 28)
+
+   *  <GS> Group Separator (ASCII 29)
+
+   *  <US> Unit Separator (ASCII 31),
+
+   *  Concatenation Operator (ASCII 43: "+").
 
    Section 7.2 of [SQRL] gives the details, which can be summarized as:
 
@@ -207,6 +216,16 @@ Internet-Draft                   SHG-MUD                  September 2020
 
    <RS><EoT>
 
+
+
+
+
+
+Richardson, et al.        Expires 12 March 2021                 [Page 4]
+
+Internet-Draft                   SHG-MUD                  September 2020
+
+
    There are, additionally optional flags that may be present in every
    Data Record as described in section 7.4.  As there is little use for
    this in the context of MUD URLs, they can likely be ignored by
@@ -218,13 +237,6 @@ Internet-Draft                   SHG-MUD                  September 2020
    Environment records, as described in section 7.4, look and act
    exactly as fields, with a special Field Identifier.  They serve no
    purpose when looking for MUD information, and MAY be ignored.
-
-
-
-Richardson, et al.        Expires 12 March 2021                 [Page 4]
-
-Internet-Draft                   SHG-MUD                  September 2020
-
 
 3.2.  Manufacturer Usage Descriptions in SQRL
 
@@ -263,24 +275,19 @@ Internet-Draft                   SHG-MUD                  September 2020
    MAC address.  No format for the MAC address is provided in the
    document.
 
-   The recommended format in order to conserve space is 12 or 16 hex
-   octets. (16 octets for the newer IEEE OUI-64 format used in 802.15.4,
-   and some next generation Ethernet proposals)
-
-   The parser SHOULD be tolerant of extra characters: colons (":"),
-   dashes ("-"), and white space.
-
-
-
-
-
-
 
 
 Richardson, et al.        Expires 12 March 2021                 [Page 5]
 
 Internet-Draft                   SHG-MUD                  September 2020
 
+
+   The recommended format in order to conserve space is 12 or 16 hex
+   octets. (16 octets for the newer IEEE OUI-64 format used in 802.15.4,
+   and some next generation Ethernet proposals)
+
+   The parser SHOULD be tolerant of extra characters: colons (":"),
+   dashes ("-"), and white space.
 
 4.  Generic URL or Version Specific URL
 
@@ -323,13 +330,6 @@ Internet-Draft                   SHG-MUD                  September 2020
    taking a picture with a camera.  Such systems may store the
    picture(s) in such a way that a future viewer of the image will be
    able to decode the QR code, possibly through assembly of multiple
-   pictures.  Of course, the QR code is not, however, a certain
-   indicator that the device is present, only that the QR code sticker
-   that came with the device is present.
-
-
-
-
 
 
 
@@ -337,6 +337,10 @@ Richardson, et al.        Expires 12 March 2021                 [Page 6]
 
 Internet-Draft                   SHG-MUD                  September 2020
 
+
+   pictures.  Of course, the QR code is not, however, a certain
+   indicator that the device is present, only that the QR code sticker
+   that came with the device is present.
 
 6.  Security Considerations
 
@@ -382,10 +386,6 @@ Internet-Draft                   SHG-MUD                  September 2020
               Identifier", February 2017,
               <https://rla.org/resource/12n-documentation>.
 
-10.2.  Informative References
-
-
-
 
 
 
@@ -393,6 +393,8 @@ Richardson, et al.        Expires 12 March 2021                 [Page 7]
 
 Internet-Draft                   SHG-MUD                  September 2020
 
+
+10.2.  Informative References
 
    [chickenegg]
               Wikipedia, "Chicken or the egg", December 2019,
@@ -438,16 +440,20 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 Authors' Addresses
 
-   Michael Richardson
-   Sandelman Software Works
 
-   Email: mcr+ietf@sandelman.ca
+
 
 
 
 Richardson, et al.        Expires 12 March 2021                 [Page 8]
 
 Internet-Draft                   SHG-MUD                  September 2020
+
+
+   Michael Richardson
+   Sandelman Software Works
+
+   Email: mcr+ietf@sandelman.ca
 
 
    Jacques Latour
@@ -460,12 +466,6 @@ Internet-Draft                   SHG-MUD                  September 2020
    UNSW Sydney
 
    Email: h.habibi@unsw.edu.au
-
-
-
-
-
-
 
 
 
