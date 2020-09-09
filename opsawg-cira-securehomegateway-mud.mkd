@@ -150,11 +150,17 @@ Then the list of needed Data Records to be filled in is explained.
 ## The SQRL protocol
 
 {{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{SQRL}}):
+
 * &lt;RS> Record Separator (ASCII 30)
+
 * &lt;EoT> End of Transmission (ASCII 4)
+
 * &lt;FS> Field Separator (ASCII 28)
+
 * &lt;GS> Group Separator (ASCII 29)
+
 * &lt;US> Unit Separator (ASCII 31),
+
 * Concatenation Operator (ASCII 43: "+").
 
 Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
