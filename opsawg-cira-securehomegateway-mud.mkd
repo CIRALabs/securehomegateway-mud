@@ -162,7 +162,7 @@ Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
 1. The QR code header starts with:
 
 ~~~~
-"[)>" &lt;RS> "06" &lt;GS> "12N"
+"[)>" <RS> "06" <GS> "12N"
 ~~~~
 
 2. Include one or more Data Records. This consists of a four letter Field Identifiers followed by ASCII characters terminated with a &lt;Unit Separator>.
@@ -170,7 +170,7 @@ Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
 3. End with:
 
 ~~~~
-&lt;RS>&lt;EoT>
+<RS><EoT>
 ~~~~
 
 There are, additionally optional flags that may be present in every Data Record as described in section 7.4.

@@ -197,7 +197,7 @@ Internet-Draft                   SHG-MUD                  September 2020
 
    1.  The QR code header starts with:
 
-   "[)>" &lt;RS> "06" &lt;GS> "12N"
+   "[)>" <RS> "06" <GS> "12N"
 
    1.  Include one or more Data Records.  This consists of a four letter
        Field Identifiers followed by ASCII characters terminated with a
@@ -205,7 +205,7 @@ Internet-Draft                   SHG-MUD                  September 2020
 
    2.  End with:
 
-   &lt;RS>&lt;EoT>
+   <RS><EoT>
 
    There are, additionally optional flags that may be present in every
    Data Record as described in section 7.4.  As there is little use for
