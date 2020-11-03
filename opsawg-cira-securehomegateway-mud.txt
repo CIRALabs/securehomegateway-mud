@@ -5,14 +5,14 @@
 OPS Area Working Group                                     M. Richardson
 Internet-Draft                                  Sandelman Software Works
 Intended status: Informational                                 J. Latour
-Expires: 12 March 2021                                         CIRA Labs
+Expires: 7 May 2021                                            CIRA Labs
                                                    H. Habibi Gharakheili
                                                              UNSW Sydney
-                                                        8 September 2020
+                                                         3 November 2020
 
 
                    On loading MUD URLs from QR codes
-            draft-richardson-opsawg-securehomegateway-mud-05
+            draft-richardson-opsawg-securehomegateway-mud-07
 
 Abstract
 
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2021.
+   This Internet-Draft will expire on 7 May 2021.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 1]
+Richardson, et al.         Expires 7 May 2021                   [Page 1]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    extracted from this document must include Simplified BSD License text
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 2]
+Richardson, et al.         Expires 7 May 2021                   [Page 2]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    In the above cases these mechanisms can only be implemented by
@@ -165,9 +165,9 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 3]
+Richardson, et al.         Expires 7 May 2021                   [Page 3]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
 2.  Terminology
@@ -221,9 +221,9 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 4]
+Richardson, et al.         Expires 7 May 2021                   [Page 4]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    There are, additionally optional flags that may be present in every
@@ -259,10 +259,10 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 3.2.4.  MUD URL Data Record
 
-   A new Field Identifier has been request from the RLA, which is "UXXX"
-   (probably "U087") This record should be filled with the MUD URL.
-   Shorter is better.  Section 8.1 of [SQRL] has some good advice on
-   longevity concerns with URLs.
+   A new Field Identifier has been assigned by the RLA, which is "M180"
+   This record should be filled with the MUD URL.  Shorter is better.
+   Section 8.1 of [SQRL] has some good advice on longevity concerns with
+   URLs.
 
    The URL provided MUST NOT have a query (?) portion present.
 
@@ -277,9 +277,9 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 5]
+Richardson, et al.         Expires 7 May 2021                   [Page 5]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    The recommended format in order to conserve space is 12 or 16 hex
@@ -333,9 +333,9 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 6]
+Richardson, et al.         Expires 7 May 2021                   [Page 6]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    pictures.  Of course, the QR code is not, however, a certain
@@ -389,9 +389,9 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 7]
+Richardson, et al.         Expires 7 May 2021                   [Page 7]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
 10.2.  Informative References
@@ -404,16 +404,16 @@ Internet-Draft                   SHG-MUD                  September 2020
               Pritikin, M., Richardson, M., Eckert, T., Behringer, M.,
               and K. Watsen, "Bootstrapping Remote Secure Key
               Infrastructures (BRSKI)", Work in Progress, Internet-
-              Draft, draft-ietf-anima-bootstrapping-keyinfra-43, 7
-              August 2020, <http://www.ietf.org/internet-drafts/draft-
-              ietf-anima-bootstrapping-keyinfra-43.txt>.
+              Draft, draft-ietf-anima-bootstrapping-keyinfra-44, 21
+              September 2020, <http://www.ietf.org/internet-drafts/
+              draft-ietf-anima-bootstrapping-keyinfra-44.txt>.
 
    [I-D.richardson-opsawg-mud-acceptable-urls]
-              Richardson, M., Pan, W., and E. Lear, "Authorized update
+              Richardson, M., Yang, J., and E. Lear, "Authorized update
               to MUD URLs", Work in Progress, Internet-Draft, draft-
-              richardson-opsawg-mud-acceptable-urls-01, 16 June 2020,
+              richardson-opsawg-mud-acceptable-urls-03, 2 November 2020,
               <http://www.ietf.org/internet-drafts/draft-richardson-
-              opsawg-mud-acceptable-urls-01.txt>.
+              opsawg-mud-acceptable-urls-03.txt>.
 
    [ieee802-1AR]
               IEEE Standard, "IEEE 802.1AR Secure Device Identifier",
@@ -445,9 +445,9 @@ Authors' Addresses
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 8]
+Richardson, et al.         Expires 7 May 2021                   [Page 8]
 
-Internet-Draft                   SHG-MUD                  September 2020
+Internet-Draft                   SHG-MUD                   November 2020
 
 
    Michael Richardson
@@ -501,4 +501,4 @@ Internet-Draft                   SHG-MUD                  September 2020
 
 
 
-Richardson, et al.        Expires 12 March 2021                 [Page 9]
+Richardson, et al.         Expires 7 May 2021                   [Page 9]
