@@ -1,7 +1,7 @@
 ---
 title: On loading MUD URLs from QR codes
-abbrev: SHG-MUD
-docname: draft-richardson-opsawg-securehomegateway-mud-08
+abbrev: QR-MUD
+docname: draft-richardson-mud-qrcode-00
 
 stand_alone: true
 

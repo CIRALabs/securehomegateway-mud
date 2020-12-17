@@ -1,4 +1,4 @@
-DRAFT:=opsawg-cira-securehomegateway-mud
+DRAFT:=richardson-mud-qrcode
 VERSION:=$(shell ./getver ${DRAFT}.mkd )
 PYANG=pyang
 
