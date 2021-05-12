@@ -1,7 +1,7 @@
 ---
 title: On loading MUD URLs from QR codes
 abbrev: QR-MUD
-docname: draft-richardson-mud-qrcode-00
+docname: draft-richardson-mud-qrcode-01
 
 stand_alone: true
 
@@ -100,11 +100,10 @@ informative:
 
 --- abstract
 
-This informational document details the mechanism used by the CIRA Secure
-Home Gateway (SHG) to load MUD definitions for devices which have no
-integrated MUD (RFC8520) support.
+This informational document details a mechanism to load MUD definitions 
+for devices which have no integrated MUD (RFC8520) support.
 
-RFCEDITOR please remove: Pull requests and edit welcome at:   https://github.com/CIRALabs/securehomegateway-mud/tree/ietf
+RFCEDITOR please remove: Pull requests and edit welcome at:   
 
 --- middle
 
@@ -165,7 +164,7 @@ This QRcode protocol builds upon the work by {{SQRL}}.
 That protocol is very briefly described in the next section.
 Then the list of needed Data Records to be filled in is explained.
 
-## The SQRL protocol
+## The SQRL Protocol
 
 {{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{SQRL}}):
 
@@ -231,7 +230,7 @@ Section 8.1 of {{SQRL}} has some good advice on longevity concerns with URLs.
 
 The URL provided MUST NOT have a query (?) portion present.
 
-### MUD device MAC address
+### MUD Device MAC Address
 
 In order for the MUD controller to associate the above policy with a specific device, then some unique identifier must be provided to the MUD controller.
 The most actionable identifier is the Ethernet MAC address.
