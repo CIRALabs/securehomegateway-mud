@@ -163,7 +163,7 @@ SQRL is an application of the 12N Data Identifier system specified by the ANSI M
 QRcode generators are available as web services {{qrcodewebservice}},
 or as programs such as {{qrencode}}.
 
-Section {#genericfirmware} summarizes the recommendations contained in {{I-D.ietf-opsawg-mud-acceptable-urls}} section 6.1 ("Updating MUD URLs vs Updating MUD files").
+{{genericfirmware}} summarizes the recommendations contained in {{I-D.ietf-opsawg-mud-acceptable-urls}} section 6.1 ("Updating MUD URLs vs Updating MUD files").
 
 # Terminology          {#Terminology}
 
