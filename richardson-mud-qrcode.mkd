@@ -221,19 +221,24 @@ They serve no purpose when looking for MUD information, and MAY be ignored.
 ### B000 Company Name
 
 The B000 Data Record is mandatory in {{SQRL}}.
-It should be an ASCII representation of the company or brand name.
-It should match the ietf-mud/mud/mfg-name in the MUD file.
+It MUST be in ASCII representation.
+It should be a representation of the company or brand name.
+It SHOULD match the ietf-mud/mud/mfg-name in the MUD file, however the MUD file can contain arbitrary UTF8 for this name, while the SQRL files are expected to be 7-bit US-ASCII.
 
 ### B001 Product Name
 
-The B001 Data Record is optional. It is the Product Name in ASCII.
-It's presence is strongly RECOMMENDED.
+The B001 Data Record is optional in {{SQRL}}.
+It's presence is RECOMMENDED.
+Some third parties that create QRcode stickers might not know the product name with 100% certainty, and MAY prefer to omit this rather than create further confusion.
+It is the Product Name in ASCII.
 
 ### B002 Model Number
 
 The B002 Data Record is optional in {{SQRL}}, but is MANDATORY in this profile.
 It is the Model Name in ASCII.
-It should match the ietf-mud/mud/model-name in the MUD file, if it is present.
+It SHOULD match the optional ietf-mud/mud/model-name in the MUD file if that entry is present in the MUD file.
+
+If a third party that is creating QRcodes can not locate an official model number when creating their MUD file and QRcode, then the third party SHOULD make one up.
 
 ### MUD URL Data Record
 
