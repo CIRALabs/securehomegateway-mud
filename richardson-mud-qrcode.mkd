@@ -53,7 +53,7 @@ normative:
 informative:
   RFC8259:
   I-D.ietf-anima-bootstrapping-keyinfra: BRSKI
-  I-D.richardson-opsawg-mud-acceptable-urls:
+  I-D.ietf-opsawg-mud-acceptable-urls:
   ieee802-1AR:
     target: "http://standards.ieee.org/findstds/standard/802.1AR-2009.html"
     title: "IEEE 802.1AR Secure Device Identifier"
@@ -250,7 +250,7 @@ This has the advantage that the resulting ACLs implemented are specific to the n
 
 A MUD URL which is affixed to the device with a sticker, or etched into the case can not be changed.
 
-Given the considerations of {{I-D.richardson-opsawg-mud-acceptable-urls}} section 2.1 ("Updating the MUD file in place"), it is prudent to use a MUD URL which points to a MUD file which will only have new features added over time, and never removed.
+Given the considerations of {{I-D.ietf-opsawg-mud-acceptable-urls}} section 2.1 ("Updating the MUD file in place"), it is prudent to use a MUD URL which points to a MUD file which will only have new features added over time, and never removed.
 
 When the firmware eventually receives built-in MUD URL support, then a more specific URL may be used.
 
