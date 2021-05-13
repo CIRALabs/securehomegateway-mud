@@ -150,10 +150,10 @@ This is an application of the 12N Data Identifier system specified by the ANSI M
 QR code generators are available as web services {{qrcodewebservice}},
 or as programs such as {{qrencode}}.
 
-They are formally defined in
-
-Section {#genericfirmware} summarizes the recommendations {{I-D.richardson-opsawg-mud-acceptable-urls}} section 2 ("Updating MUD URLs vs Updating MUD files").
-The question as to whether the MUD file should be specific to a specific version of the device firmware is considered in the context of affixed external labels.
+Section {#genericfirmware} summarizes the recommendations contained in {{I-D.ietf-opsawg-mud-acceptable-urls}}
+section 6.1 ("Updating MUD URLs vs Updating MUD files").
+The document considers whether the MUD file should be
+specific to a version of the device firmware in the context of affixed external labels.
 
 A third issue is that an intermediary (ISP, or third-party security
 service) may want to extend or amend a MUD file received from a manufacturer.
