@@ -98,10 +98,13 @@ informative:
 
 --- abstract
 
-This informational document details a mechanism to load MUD definitions 
+This informational document details a mechanism to load MUD definitions
 for devices which have no integrated MUD (RFC8520) support.
 
-RFCEDITOR please remove: Pull requests and edit welcome at:   
+This document is published to inform the Internet community of this mechanism to allow
+interoperability and to serve as a basis of other standards work if there is interest.
+
+RFCEDITOR please remove: Pull requests and edit welcome at:
 
 --- middle
 
