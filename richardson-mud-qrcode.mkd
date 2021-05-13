@@ -155,11 +155,6 @@ section 6.1 ("Updating MUD URLs vs Updating MUD files").
 The document considers whether the MUD file should be
 specific to a version of the device firmware in the context of affixed external labels.
 
-A third issue is that an intermediary (ISP, or third-party security
-service) may want to extend or amend a MUD file received from a manufacturer.
-In order to maintain an audit trail of changes, a way to encode the previous
-MUD URL and signature file (and status) is provided.
-
 # Terminology          {#Terminology}
 
 {::boilerplate bcp14}
