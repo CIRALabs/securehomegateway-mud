@@ -7,7 +7,6 @@ stand_alone: true
 
 ipr: trust200902
 area: Internet
-wg: OPS Area Working Group
 kw: Internet-Draft
 cat: info
 
@@ -17,7 +16,6 @@ pi:    # can use array (if all yes) or hash here
   symrefs: yes
 
 author:
-
 
 - ins: M. Richardson
   name: Michael Richardson
