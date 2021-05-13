@@ -102,7 +102,7 @@ informative:
 
 --- abstract
 
-This informational document details a mechanism to load MUD definitions
+This informational document details a protocol to load MUD definitions
 for devices which have no integrated MUD (RFC8520) support.
 
 This document is published to inform the Internet community of this mechanism to allow
@@ -127,7 +127,7 @@ In the above cases these mechanisms can only be implemented by persons with acce
 In the meantime there is a chicken or egg problem ({{chickenegg}}): no manufacturers include MUD URLs in their products as there are no gateways that use them.
 No gateways include code that processes MUD URLs as no products produce them.
 
-The mechanism described here allows any person with physical access to the device to affix a reference to a MUD URL that can later be scanned by an end user.
+The protocl described here allows any person with physical access to the device to affix a reference to a MUD URL that can later be scanned by an end user.
 
 Such an action can be done by
 
@@ -144,7 +144,7 @@ Such an action can be done by
 * a retailer as a value added service.
 
 QRcodes are informally described in {{qrcode}} and formally defined in {{isoiec18004}}.
-The mechanism described in this document uses a QRcode to encode the MUD URL.  Specifically, the mechanism leverages the data format from the Reverse Logistics Association's system {{SQRL}}.
+The protocol described in this document uses a QRcode to encode the MUD URL.  Specifically, the protocol leverages the data format from the Reverse Logistics Association's system {{SQRL}}.
 This is an application of the 12N Data Identifier system specified by the ANSI MH10.8.2 Committee {{mh10}} in a format appropriate for QRcodes as well as other things like NFCs transmissions.
 
 QR code generators are available as web services {{qrcodewebservice}},
