@@ -344,16 +344,11 @@ This makes it more likely that a policy will be applied to the wrong device.
 
 # IANA Considerations
 
-This document makes no IANA actions.
+This document makes no request for IANA actions.
 
 # Acknowledgements
 
 This work was supported by the Canadian Internet Registration Authority (cira.ca).
-
-# History
-
-Previous versions of this work leveraged the QRcode format from the WiFi Alliance DPP specification.
-This document no longer uses that.
 
 --- back
 
