@@ -205,11 +205,16 @@ Section 7.2 of {{SQRL}} gives the details, which can be summarized as:
 <RS><EoT>
 ~~~~
 
-There are, additionally optional flags that may be present in every Data Record as described in section 7.4.
-As there is little use for this in the context of MUD URLs, they can likely be ignored by parsers that are not parsing any of the rest of the information.
-A parser that sees a Field Separator in the stream SHOULD ignore the characters collected so far and then continue parsing to get the user data.
+There are additionally optional flags that may be present in every Data Record as described in section 7.4 of {{SQRL}}.
+These flags have no bearing on MUD processing.
+A parser which is only collecting MUD URLs will not need to parse those flags.
+A general purpose SQRL parser will need more complexity.
 
-Environment records, as described in section 7.4, look and act exactly as fields, with a special Field Identifier. They serve no purpose when looking for MUD information, and MAY be ignored.
+Field Seperator characters are used in SQRL to signify the beginning of a new unit of data.
+A MUD specific parser that encounters a Field Seperator and has not yet collected the right MUD information MUST ignore the characters collected so far and then restart.
+
+Environment records, as described in {{SQRL}} section 7.4, look and act exactly as fields, with a special Field Identifier.
+They serve no purpose when looking for MUD information, and MAY be ignored.
 
 ## Manufacturer Usage Descriptions in SQRL
 
