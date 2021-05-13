@@ -290,7 +290,7 @@ Note that in many cases it will be third parties who are generating these QRcode
 
 # Crowd Supply of MUD Files
 
-At the time of writing, the IETF MUD is a new standard.
+At the time of writing, the IETF MUD is a new IETF Proposed Standard.
 Hence, IoT device manufacturers have not yet provided MUD profiles for their devices.
 A research group at the University of New South Wales (UNSW Sydney) has developed an open-source tool, called MUDgee ({{MUDgee}}), which automatically generates a MUD file (profile) for an IoT device from its traffic trace in order to make this process faster, easier, and more accurate.
 Note that the generated profile completeness solely depends on the completeness of the input traffic traces.
