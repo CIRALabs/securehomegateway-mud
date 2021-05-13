@@ -78,6 +78,10 @@ informative:
     author:
       ins: "K. Fukuchi"
     date: "December 2019"
+  mh10:
+    target: "https://webstore.ansi.org/Standards/MHIA/ANSIMH102016"
+    title: "ANSI MH10.8.2 Committee"
+    date: "May 2021"
   MUDgee:
     target: "https://github.com/ayyoob/mudgee"
     title: "MUDgee"
@@ -140,12 +144,14 @@ Such an action can be done by
 
 * a retailer as a value added service.
 
-The mechanism described herein uses a QRcode, which is informally described in {{qrcode}}, but specifically leverages
-the data format from Reverse Logistics Association's {{SQRL}} system.
-This is an application of the 12N Data Identifier system specified by the ANSI MH10.8.2 Committee in a format appropriate for QRcodes as well as other things like NFCs transmissions.
+QRcodes are informally described in {{qrcode}} and formally defined in {{isoiec18004}}.
+The mechanism described in this document uses a QRcode to encode the MUD URL.  Specifically, the mechanism leverages the data format from the Reverse Logistics Association's system {{SQRL}}.
+This is an application of the 12N Data Identifier system specified by the ANSI MH10.8.2 Committee {{mh10}} in a format appropriate for QRcodes as well as other things like NFCs transmissions.
 
-QR code generators are available as web services ({{qrcodewebservice}}), or as programs such
-as {{qrencode}}.  They are formally defined in {{isoiec18004}}.
+QR code generators are available as web services {{qrcodewebservice}},
+or as programs such as {{qrencode}}.
+
+They are formally defined in
 
 Section {#genericfirmware} summarizes the recommendations {{I-D.richardson-opsawg-mud-acceptable-urls}} section 2 ("Updating MUD URLs vs Updating MUD files").
 The question as to whether the MUD file should be specific to a specific version of the device firmware is considered in the context of affixed external labels.
