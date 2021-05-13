@@ -157,7 +157,7 @@ specific to a version of the device firmware in the context of affixed external 
 
 # Terminology          {#Terminology}
 
-{::boilerplate bcp14}
+{::boilerplate bcp14ise}
 
 # Protocol
 
