@@ -308,7 +308,39 @@ Of course, the QR code is not, however, a certain indicator that the device is p
 
 # Security Considerations
 
-To Be Determined.
+The mere presence of at QRcode on a device does not in itself create any security issues on its own.
+Neither an attached paper sticker or a laser etched code in a plastic case will not affect the device operation.
+The QRcode is not active, it is not in general able to communicate on nearby networks.
+It is conceivable that something more active is concealed in the sticker: an NFC or RFID tag for instance.
+But, any sticker could contain such a thing: on some university campuses stickers are often used as part of political campaigns, and can be found attached all over the place.
+
+Security issues that this protocol create are related to assumptions that the presence of the QRcode might imply.
+The presence of the QRcode may imply to some owners or network operators that the behaviour of the device has been vetted by some authority.
+It is here that some caution is required.
+
+The network operator who takes the MUD file designated by the QRcode needs to be careful that they are validating the signature on the MUD file.
+Not only that the file is intact, but that the signer of the file is authorized to sign MUD files for that vendor, or that the network operator has some trust if the MUD file is a crowd sourced definition.
+At the time of writing, {{RFC8520}} does not define any infrastructure to authenticate or authorize MUD file signers.
+
+A possibly bigger risk from application of MUD file stickers to devices is that they may begin to convey a sense of safety to users of the device.
+The presence of the sticker, possibly with the logo of the physical establishment in which the device is located could convey to occupants of the establishment that this device is an official device.
+For instance, a university which only deploys sensors on the university campus that have been vetted for compliance against a MUD definition.
+
+The risk is then of social engineering: any device with a reasonable looking QRcode may become a trusted device.
+An attacker that wishes to infiltrate their own devices need only suitably camoflage the device with an appropriate sticker in order to convey legitimacy.
+
+Another issue with the stickers is that the wrong sticker could be applied to a device by a reseller or other trusted party, either in error, or via some physical or socially engineered attack against that party.
+The network operator now onboards a device, and applies what they think is a legitimate network policy for the device in their hands, only it is in fact a policy for another kind of device.
+
+Inclusion of the device specific MAC address (described in {{macaddress}}) in the QRcode makes use of the MUD code much easier as it identifies the device specifically.
+If the MAC addresss is not included, then a network operator, having the device in their hands, then has to associate the policy with the device through some other interface.
+
+Despite this advantage including the MAC address requires that the QRcode for that device requires that a unique sticker be created for each device.
+This is possible if the sticker is applied by a manufacturer: it is already common to have a serial number and MAC address on the outside of the device.
+In that case, if the QRcode is part of that sticker, then the customization problem is not that complex.
+
+For cases where a third party has produced the QRcode, it is likely that every device of a particular model will have the same QRcode applied, omitting the MAC address.
+This makes it more likely that a policy will be applied to the wrong device.
 
 # IANA Considerations
 
