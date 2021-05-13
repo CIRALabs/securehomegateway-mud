@@ -99,6 +99,13 @@ informative:
     author:
       org: "ISO/IEC"
     date: "2015-02-01"
+  URLshorten:
+    title: "URL shortening"
+    target: "https://en.wikipedia.org/wiki/URL_shortening"
+    author:
+      org: "Wikipedia"
+    date: "2021-05-13"
+
 
 --- abstract
 
@@ -224,10 +231,13 @@ It should match the ietf-mud/mud/model-name in the MUD file, if it is present.
 
 ### MUD URL Data Record
 
-A new Field Identifier has been assigned by the RLA, which is "M180"
-This record should be filled with the MUD URL.
-Shorter is better.
-Section 8.1 of {{SQRL}} has some good advice on longevity concerns with URLs.
+A new Field Identifier has been assigned by the Reverse Logistics Association (RLA), which is "M180"
+This record MUST be filled with the MUD URL.
+
+Short URLs are easier to encode into QRcode.
+Use of URL shortening services (see {{URLshorten}}) can be useful provided that the service is stable throughout the lifetime of the device and QRcode, and that the privacy stance of the service is well understood.
+
+Section 8.1 of {{SQRL}} also has some good advice on longevity concerns with URLs.
 
 The URL provided MUST NOT have a query (?) portion present.
 
