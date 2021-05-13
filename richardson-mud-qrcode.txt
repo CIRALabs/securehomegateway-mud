@@ -483,19 +483,19 @@ Internet-Draft                   QR-MUD                         May 2021
    then has to associate the policy with the device through some other
    interface.
 
-   Despite this advantage including the MAC address requires that the
-   QRcode for that device requires that a unique sticker be created for
-   each device.  This is possible if the sticker is applied by a
-   manufacturer: it is already common to have a serial number and MAC
-   address on the outside of the device.  In that case, if the QRcode is
-   part of that sticker, then the customization problem is not that
-   complex.
+   Despite the significant advantage of having the MAC address include,
+   it is unlikely that third party stickers will include that.
+   Including the MAC address requires that the QRcode for that device
+   requires that a unique sticker be created for each device.  This is
+   possible if the sticker is applied by a manufacturer: it is already
+   common to have a serial number and MAC address on the outside of the
+   device.  In that case, if the QRcode is part of that sticker, then
+   the customization problem is not that complex.
 
    For cases where a third party has produced the QRcode, it is likely
    that every device of a particular model will have the same QRcode
    applied, omitting the MAC address.  This makes it more likely that a
    policy will be applied to the wrong device.
-
 
 
 
