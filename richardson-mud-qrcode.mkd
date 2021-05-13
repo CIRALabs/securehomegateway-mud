@@ -251,23 +251,26 @@ Use of URL shortening services (see {{URLshorten}}) can be useful provided that 
 Section 8.1 of {{SQRL}} also has some good advice on longevity concerns with URLs.
 
 The URL provided MUST NOT have a query (?) portion present.
+If one is present, the query portion MUST be removed before processing.
 
-### MUD Device MAC Address
+### MUD Device MAC Address {#macaddress}
 
-In order for the MUD controller to associate the above policy with a specific device, then some unique identifier must be provided to the MUD controller.
+In order for the MUD controller to associate the above policy with a specific device,
+some unique identifier must be provided to the MUD controller.
 The most actionable identifier is the Ethernet MAC address.
 {{SQRL}} section 9.10 defines the Data Record: "M06C" as the MAC address.
-No format for the MAC address is provided in the document.
+No format for the MAC address is provided in that document.
 
-The recommended format in order to conserve space is 12 or 16 hex octets.
-(16 octets for the newer IEEE OUI-64 format used in 802.15.4, and some next generation Ethernet proposals)
+This document RECOMMENDS 12 (or 16) hex octets are used with no spaces or punctuation.
+(16 octets are used in the IEEE OUI-64 format used in 802.15.4, and some next generation Ethernet proposals)
 
-The parser SHOULD be tolerant of extra characters: colons (":"), dashes ("-"), and white space.
+Parsers that find punctuation (such as colons (":"), dashes ("-"), or white space) MUST
+skip over it.
 
 # Generic URL or Version Specific URL {#genericfirmware}
 
 MUD URLs which are communicated in-band by the device, and which are programmed into the device's firmware may provide a firmware specific version of the MUD URL.
-This has the advantage that the resulting ACLs implemented are specific to the needs of that version of the firmware.
+This has the advantage that the resulting Access Control Lists (ACLs) implemented are specific to the needs of that version of the firmware.
 
 A MUD URL which is affixed to the device with a sticker, or etched into the case can not be changed.
 
