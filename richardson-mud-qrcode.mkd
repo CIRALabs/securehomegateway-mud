@@ -282,9 +282,17 @@ Note that in many cases it will be third parties who are generating these QRcode
 
 # Crowd Supply of MUD Files
 
-The IETF MUD is a new standard. Hence, IoT device manufacturers have not yet provided MUD profiles for their devices. A research group at the University of New South Wales (UNSW Sydney) has developed an open-source tool, called MUDgee ({{MUDgee}}), which automatically generates a MUD file (profile) for an IoT device from its traffic trace in order to make this process faster, easier, and more accurate. Note that the generated profile completeness solely depends on the completeness of the input traffic traces. MUDgee assumes that all the activity seen is intended and benign.
+At the time of writing, the IETF MUD is a new standard.
+Hence, IoT device manufacturers have not yet provided MUD profiles for their devices.
+A research group at the University of New South Wales (UNSW Sydney) has developed an open-source tool, called MUDgee ({{MUDgee}}), which automatically generates a MUD file (profile) for an IoT device from its traffic trace in order to make this process faster, easier, and more accurate.
+Note that the generated profile completeness solely depends on the completeness of the input traffic traces.
+MUDgee assumes that all the activity seen is intended and benign.
 
-UNSW researchers have applied MUDgee about 30 consumer IoT devices from their lab testbed, and publicly released their MUD files ({{MUDfiles}}). MUDgee can assist IoT manufacturers in developing and verifying MUD profiles, while also helping adopters of these devices to ensure they are compatible with their organisational policies.
+UNSW researchers have applied MUDgee about 30 consumer IoT devices from their lab testbed, and publicly released their MUD files ({{MUDfiles}}).
+MUDgee can assist IoT manufacturers in developing and verifying MUD profiles, while also  helping adopters of these devices to ensure they are compatible with their organisational policies.
+
+Similar processes have been done in a number of other public and private labs.
+One of the strong motivations for this specification is to allow for this work to leave the lab, to be applied in the field.
 
 # Privacy Considerations
 
