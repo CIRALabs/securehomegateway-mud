@@ -164,9 +164,7 @@ specific to a version of the device firmware in the context of affixed external 
 
 # Terminology          {#Terminology}
 
-Although this document is not an IETF Standards Track publication it
-adopts the conventions for normative language to provide clarity of
-instructions to the implementer.
+{::boilerplate bcp14info}
 {::boilerplate bcp14}
 
 # Protocol
