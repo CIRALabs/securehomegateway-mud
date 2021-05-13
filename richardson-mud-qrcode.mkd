@@ -115,7 +115,7 @@ RFCEDITOR please remove: Pull requests and edit welcome at:
 # Introduction
 
 The Manufacturer Usage Description (MUD) {{RFC8520}} defines a YANG data model to express what sort of access a device requires to operate correctly.
-The document additionally defines three ways for the device to communicate the URL of the resulting JSON {{RFC8259}} format file to a network enforcement point: DHCP, within an X.509 certificate extension, and via LLDP.
+That document additionally defines three ways for the device to communicate the URL of the resulting JSON {{RFC8259}} format file to a network enforcement point: DHCP, within an X.509 certificate extension, and via LLDP.
 
 Each of the above mechanism conveys the MUD URL in-band, and requires modifications to the device firmware.
 Most small IoT devices do not have LLDP, and often have very restricted DHCP clients.
@@ -123,7 +123,6 @@ Adding the LLDP or DHCP options requires at least some minimal configuration cha
 Meanwhile, use of the PKIX certification extension only makes sense as part of a larger IDevID based {{ieee802-1AR}} deployment such as {{-BRSKI}}.
 
 In the above cases these mechanisms can only be implemented by persons with access to modify and update the firmware of the device.
-The MUD system was designed to be implemented by Manufacturers after all!
 
 In the meantime there is a chicken or egg problem ({{chickenegg}}): no manufacturers include MUD URLs in their products as there are no gateways that use them.
 No gateways include code that processes MUD URLs as no products produce them.
