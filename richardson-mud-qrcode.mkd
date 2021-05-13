@@ -167,7 +167,7 @@ Then the list of needed Data Records to be filled in is explained.
 
 ## The SQRL Protocol
 
-{{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus five control codes (see section 3.1 of {{SQRL}}):
+{{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus six control codes (see section 3.1 of {{SQRL}}):
 
 * &lt;RS> Record Separator (ASCII 30)
 
