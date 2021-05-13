@@ -158,7 +158,7 @@ specific to a version of the device firmware in the context of affixed external 
 A third issue is that an intermediary (ISP, or third-party security
 service) may want to extend or amend a MUD file received from a manufacturer.
 In order to maintain an audit trail of changes, a way to encode the previous
-MUD URL and signature file (and status) is provided. (FOR DISCUSSION)
+MUD URL and signature file (and status) is provided.
 
 # Terminology          {#Terminology}
 
