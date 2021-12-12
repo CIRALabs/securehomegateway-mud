@@ -176,13 +176,15 @@ non-firmware specific.
 
 {::boilerplate bcp14}
 
+Readers should be familiar with the terminology in {{RFC8520}}, including: MUD file, MUD URL, Manufacturer and MUD manager and controller.
+
 # Protocol
 
 This QRcode protocol builds upon the work by {{SQRL}}.
-That protocol is very briefly described in the next section.
+That protocol is very briefly described in {{sqrlsummary}}.
 Then the list of needed Data Records to be filled in is explained.
 
-## The SQRL Protocol
+## The SQRL Protocol {#sqrlsummary}
 
 {{SQRL}} documents an octet protocol that can be efficiently encoded into QRcodes using a sequence of ASCII bytes, plus six control codes (see section 3.1 of {{SQRL}}):
 
@@ -237,9 +239,9 @@ It SHOULD match the ietf-mud/mud/mfg-name in the MUD file, however the MUD file 
 ### B001 Product Name
 
 The B001 Data Record is optional in {{SQRL}}.
+It is the Product Name in ASCII.
 It's presence is RECOMMENDED.
 Some third parties that create QRcode stickers might not know the product name with 100% certainty, and MAY prefer to omit this rather than create further confusion.
-It is the Product Name in ASCII.
 
 ### B002 Model Number
 
@@ -265,11 +267,10 @@ Section 8.1 of {{SQRL}} also has some good advice on longevity concerns with URL
 The URL provided MUST NOT have a query (?) portion present.
 If one is present, the query portion MUST be removed before processing.
 
-### MUD Device MAC Address {#macaddress}
+### Device MAC Address {#macaddress}
 
-In order for the MUD controller to associate the above policy with a specific device,
-some unique identifier must be provided to the MUD controller.
-The most actionable identifier is the Ethernet MAC address.
+If a MAC address is used as a unique device identifier (which is RECOMMENDED if possible), then it MUST be included in this Data Record.
+
 {{SQRL}} section 9.10 defines the Data Record: "M06C" as the MAC address.
 No format for the MAC address is provided in that document.
 
@@ -282,7 +283,7 @@ skip over it.
 # Generic URL or Version Specific URL {#genericfirmware}
 
 MUD URLs which are communicated in-band by the device, and which are programmed into the device's firmware may provide a firmware specific version of the MUD URL.
-This has the advantage that the resulting Access Control Lists (ACLs) implemented are specific to the needs of that version of the firmware.
+This has the advantage that the resulting Access Control Lists (ACLs) enforced in the network are specific to the needs of that version of the firmware.
 
 A MUD URL which is affixed to the device with a sticker, or etched into the case can not be changed.
 
@@ -338,22 +339,24 @@ A possibly bigger risk from application of MUD file stickers to devices is that 
 The presence of the sticker, possibly with the logo of the physical establishment in which the device is located could convey to occupants of the establishment that this device is an official device.
 For instance, a university which only deploys sensors on the university campus that have been vetted for compliance against a MUD definition.
 
-The risk is then of social engineering: any device with a reasonable looking QRcode may become a trusted device.
+The risk is then of social engineering: any device with a reasonable looking QRcode may be seen as a trusted device.
 An attacker that wishes to infiltrate their own devices need only suitably camoflage the device with an appropriate sticker in order to convey legitimacy.
 
 Another issue with the stickers is that the wrong sticker could be applied to a device by a reseller or other trusted party, either in error, or via some physical or socially engineered attack against that party.
 The network operator now onboards a device, and applies what they think is a legitimate network policy for the device in their hands, only it is in fact a policy for another kind of device.
 
+Careful examination of stickers is in order!
+
 Inclusion of the device specific MAC address (described in {{macaddress}}) in the QRcode makes use of the MUD code much easier as it identifies the device specifically.
 If the MAC addresss is not included, then a network operator, having the device in their hands, then has to associate the policy with the device through some other interface.
 
 Despite the significant advantage of having the MAC address include, it is unlikely that third party stickers will include that.
-Including the MAC address requires that the QRcode for that device requires that a unique sticker be created for each device.
+Including the MAC address requires that a unique sticker with a QRcode be created for each device.
 This is possible if the sticker is applied by a manufacturer: it is already common to have a serial number and MAC address on the outside of the device.
 In that case, if the QRcode is part of that sticker, then the customization problem is not that complex.
 
 For cases where a third party has produced the QRcode, it is likely that every device of a particular model will have the same QRcode applied, omitting the MAC address.
-This makes it more likely that a policy will be applied to the wrong device.
+This increases the possibility that the wrong policy will be applied to a device.
 
 # IANA Considerations
 
