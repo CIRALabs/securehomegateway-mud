@@ -42,15 +42,15 @@ normative:
     author:
       org: "Reverse Logistics Association"
     date: "February 2017"
+
+
+informative:
   qrcode:
     target: "https://en.wikipedia.org/wiki/QR_code"
     title: "QR Code"
     author:
       org: "Wikipedia"
     date: "December 2019"
-
-
-informative:
   RFC8259:
   I-D.ietf-anima-bootstrapping-keyinfra: BRSKI
   I-D.ietf-opsawg-mud-acceptable-urls:
