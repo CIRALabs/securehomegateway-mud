@@ -137,7 +137,7 @@ In the above cases these mechanisms can only be implemented by persons with acce
 In the meantime there is a chicken or egg problem ({{chickenegg}}): "manufacturers are not motivated to (and thus likely do not) include MUD URLs in their products, as they believe that  there are no gateways using those URLs.
 At the same time, gateways have little incentive to (and thus likely do not) include code that processes MUD URLs, as it is believed that no products have and disseminate them.
 
-The protocol described here allows any person with physical access to the device to affix a reference to a MUD URL that can later be scanned by an end user.
+The protocol described in this document allows any person with physical access to the device to affix a reference to a MUD URL that can later be scanned by an end user.
 
 The QR-based protocol is presented as a convenient alternative when the mechanisms from RFC 8520  are not available to use, on the device or the gateway.
 
@@ -170,7 +170,7 @@ or as programs such as {{qrencode}}.
 
 {{genericfirmware}} summarizes the considerations contained in {{I-D.ietf-opsawg-mud-acceptable-urls}} section 6.1 ("Updating MUD URLs vs Updating MUD files").
 Due to the immutable nature of the QRcode, MUD URLs in this document will need to
-non-firmware specific.
+be non-firmware specific.
 
 # Terminology          {#Terminology}
 
@@ -221,8 +221,8 @@ These flags have no bearing on MUD processing.
 A parser which is only collecting MUD URLs will not need to parse those flags.
 A general purpose SQRL parser will need more complexity.
 
-Field Seperator characters are used in SQRL to signify the beginning of a new unit of data.
-A MUD specific parser that encounters a Field Seperator and has not yet collected the right MUD information MUST ignore the characters collected so far and then restart.
+Field Separator characters are used in SQRL to signify the beginning of a new unit of data.
+A MUD specific parser that encounters a Field Separator and has not yet collected the right MUD information MUST ignore the characters collected so far and then restart.
 
 Environment records, as described in {{SQRL}} section 7.4, look and act exactly as fields, with a special Field Identifier.
 They serve no purpose when looking for MUD information, and MAY be ignored.
@@ -240,7 +240,7 @@ It SHOULD match the ietf-mud/mud/mfg-name in the MUD file, however the MUD file 
 
 The B001 Data Record is optional in {{SQRL}}.
 It is the Product Name in ASCII.
-It's presence is RECOMMENDED.
+Its presence is RECOMMENDED.
 Some third parties that create QRcode stickers might not know the product name with 100% certainty, and MAY prefer to omit this rather than create further confusion.
 
 ### B002 Model Number
@@ -301,11 +301,11 @@ A research group at the University of New South Wales (UNSW Sydney) has develope
 Note that the generated profile completeness solely depends on the completeness of the input traffic traces.
 MUDgee assumes that all the activity seen is intended and benign.
 
-UNSW researchers have applied MUDgee about 30 consumer IoT devices from their lab testbed, and publicly released their MUD files ({{MUDfiles}}).
+UNSW researchers have applied MUDgee to about 30 consumer IoT devices from their lab testbed, and publicly released their MUD files ({{MUDfiles}}).
 MUDgee can assist IoT manufacturers in developing and verifying MUD profiles, while also  helping adopters of these devices to ensure they are compatible with their organisational policies.
 
 Similar processes have been done in a number of other public and private labs.
-One of the strong motivations for this specification is to allow for this work to leave the lab, to be applied in the field.
+One of the strong motivations for this specification is to allow for this work to leave the lab, and to be applied in the field.
 
 # Privacy Considerations
 
@@ -314,15 +314,15 @@ The presence of the MUD URL in the QR code reveals the manufacturer of the devic
 The MAC address of the device will also need to be present, and this is potentially Personally Identifiable Information (PII).
 Such QRcodes should not be placed on the outside of the packaging, and only on the device itself, ideally on a non-prominent part of the device. (e.g., the bottom).
 
-The QR code sticker should not placed on any part of the device that might become visible to machine vision systems in the same area.
+The QR code sticker should not be placed on any part of the device that might become visible to machine vision systems in the same area.
 This includes security systems, robotic vacuum cleaners, anyone taking a picture with a camera.
 Such systems may store the picture(s) in such a way that a future viewer of the image will be able to decode the QR code, possibly through assembly of multiple pictures.
 Of course, the QR code is not, however, a certain indicator that the device is present, only that the QR code sticker that came with the device is present.
 
 # Security Considerations
 
-The mere presence of at QRcode on a device does not in itself create any security issues on its own.
-Neither an attached paper sticker or a laser etched code in a plastic case will not affect the device operation.
+The mere presence of a QRcode on a device does not in itself create any security issues on its own.
+Neither an attached paper sticker or a laser etched code in a plastic case will affect the device operation.
 The QRcode is not active, it is not in general able to communicate on nearby networks.
 It is conceivable that something more active is concealed in the sticker: an NFC or RFID tag for instance.
 But, any sticker could contain such a thing: on some university campuses stickers are often used as part of political campaigns, and can be found attached all over the place.
@@ -340,7 +340,7 @@ The presence of the sticker, possibly with the logo of the physical establishmen
 For instance, a university which only deploys sensors on the university campus that have been vetted for compliance against a MUD definition.
 
 The risk is then of social engineering: any device with a reasonable looking QRcode may be seen as a trusted device.
-An attacker that wishes to infiltrate their own devices need only suitably camoflage the device with an appropriate sticker in order to convey legitimacy.
+An attacker that wishes to infiltrate their own devices need only suitably camouflage the device with an appropriate sticker in order to convey legitimacy.
 
 Another issue with the stickers is that the wrong sticker could be applied to a device by a reseller or other trusted party, either in error, or via some physical or socially engineered attack against that party.
 The network operator now onboards a device, and applies what they think is a legitimate network policy for the device in their hands, only it is in fact a policy for another kind of device.
@@ -348,9 +348,9 @@ The network operator now onboards a device, and applies what they think is a leg
 Careful examination of stickers is in order!
 
 Inclusion of the device specific MAC address (described in {{macaddress}}) in the QRcode makes use of the MUD code much easier as it identifies the device specifically.
-If the MAC addresss is not included, then a network operator, having the device in their hands, then has to associate the policy with the device through some other interface.
+If the MAC address is not included, then a network operator, having the device in their hands, has to associate the policy with the device through some other interface.
 
-Despite the significant advantage of having the MAC address include, it is unlikely that third party stickers will include that.
+Despite the significant advantage of having the MAC address included, it is unlikely that third party stickers will include that.
 Including the MAC address requires that a unique sticker with a QRcode be created for each device.
 This is possible if the sticker is applied by a manufacturer: it is already common to have a serial number and MAC address on the outside of the device.
 In that case, if the QRcode is part of that sticker, then the customization problem is not that complex.
