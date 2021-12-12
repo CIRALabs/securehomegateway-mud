@@ -110,7 +110,7 @@ informative:
 --- abstract
 
 This informational document details a protocol to load MUD definitions
-for devices which have no integrated MUD (RFC8520) support.
+for devices which have no integrated Manufacturer Usage Description (MUD) [RFC8520] support.
 
 This document is published to inform the Internet community of this mechanism to allow
 interoperability and to serve as a basis of other standards work if there is interest.
@@ -124,7 +124,8 @@ interoperability and to serve as a basis of other standards work if there is int
 # Introduction
 
 The Manufacturer Usage Description (MUD) {{RFC8520}} defines a YANG data model to express what sort of access a device requires to operate correctly.
-That document additionally defines three ways for the device to communicate the URL of the resulting JSON {{RFC8259}} format file to a network enforcement point: DHCP, within an X.509 certificate extension, and via LLDP.
+That document additionally defines three ways for the device to
+to communicate to a network enforcement point the MUD URL, i.e., the URL of the resulting MUD file in JSON {{RFC8259}}: DHCP, within an X.509 certificate extension, and via LLDP.
 
 Each of the above mechanism conveys the MUD URL in-band, and requires modifications to the device firmware.
 Most small IoT devices do not have LLDP, and often have very restricted DHCP clients.
@@ -133,12 +134,14 @@ Meanwhile, use of the PKIX certification extension only makes sense as part of a
 
 In the above cases these mechanisms can only be implemented by persons with access to modify and update the firmware of the device.
 
-In the meantime there is a chicken or egg problem ({{chickenegg}}): no manufacturers include MUD URLs in their products as there are no gateways that use them.
-No gateways include code that processes MUD URLs as no products produce them.
+In the meantime there is a chicken or egg problem ({{chickenegg}}): "manufacturers are not motivated to (and thus likely do not) include MUD URLs in their products, as they believe that  there are no gateways using those URLs.
+At the same time, gateways have little incentive to (and thus likely do not) include code that processes MUD URLs, as it is believed that no products have and disseminate them.
 
 The protocol described here allows any person with physical access to the device to affix a reference to a MUD URL that can later be scanned by an end user.
 
-Such an action can be done by
+The QR-based protocol is presented as a convenient alternative when the mechanisms from RFC 8520  are not available to use, on the device or the gateway.
+
+Affixing a sticker can be done by
 
 * the marketing department of the Manufacturer,
 
