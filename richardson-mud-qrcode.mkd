@@ -115,7 +115,9 @@ for devices which have no integrated MUD (RFC8520) support.
 This document is published to inform the Internet community of this mechanism to allow
 interoperability and to serve as a basis of other standards work if there is interest.
 
-RFCEDITOR please remove: Pull requests and edit welcome at:
+[^track]
+
+[^track]: RFC-EDITOR-please-remove: This work is tracked at https://github.com/mcr/mud-qrcode
 
 --- middle
 
